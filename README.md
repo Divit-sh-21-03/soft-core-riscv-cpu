@@ -38,13 +38,6 @@ Soft_Core_RISC-V_CPU is a compact, modular **5-stage pipelined RISC-V soft core*
 
 ---
 
-## Demonstration Notes
-
-- On-board LEDs visualize pipeline phases and instruction classes for rapid, live demonstration.  
-- For interviews, demonstrate: simulation log showing correct instruction flow, then the hardware demo with LED behavior to show runtime observability.
-
----
-
 ## Resource & Timing Summary
 
 - Target device: Spartan-7 (XC7S15)  
@@ -61,6 +54,43 @@ Soft_Core_RISC-V_CPU is a compact, modular **5-stage pipelined RISC-V soft core*
 - Utilization Summary (resource usage)  
 - I/O pin mapping (XDC)  
 
+---
+## Supported Opcodes 
+This core implements the RV32 base integer instruction set. The supported opcodes / instructions are as follows :
+
+- Arithmetic & Logical (R-type / I-type)
+  - ADD, SUB (R-type)
+  - ADDI (I-type)
+  - AND, OR (R-type)
+  - ANDI, ORI (I-type)
+  - SLT (R-type), SLTI (I-type)
+  - SLL, SRL, SRA (R-type)
+  - SLLI, SRLI, SRAI (I-type shifts)
+
+- Memory Access
+  - LW  — Load Word (I-type, loads from data memory)
+  - SW  — Store Word (S-type, stores to data memory)
+
+- Branches & Control Flow
+   - BEQ  — Branch if Equal (B-type)
+   - BNE  — Branch if Not Equal (B-type)
+   - JAL  — Jump and Link (J-type)
+   - LUI  — Load Upper Immediate (U-type)
+
+- Instruction Types Handled
+  - R-type: register-register arithmetic/logical
+  - I-type: immediate arithmetic/logical, loads, shifts
+  - S-type: stores
+  - B-type: branches
+  - U-type: upper immediate
+  - J-type: jumps
+
+- Unsupported features
+  - Multiplication / Division (M-extension)
+  - Floating point
+  - Atomic operations
+  - Exceptions / privileged instructions
+  - Compressed instructions (RVC)
 ---
 
 ## Extensions & Next Steps
