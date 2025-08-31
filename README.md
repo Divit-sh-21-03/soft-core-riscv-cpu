@@ -45,16 +45,6 @@ Soft_Core_RISC-V_CPU is a compact, modular **5-stage pipelined RISC-V soft core*
 - Implementation reports indicate timing closure and low logic utilization (refer to provided implementation screenshots and reports in the repository for exact numbers).
 
 ---
-
-## Recommended Artifacts (included in repository)
-
-- Vivado Flow Navigator screenshot (synthesis/implementation)  
-- Sources / Hierarchy screenshot  
-- Timing Summary (post-implementation)  
-- Utilization Summary (resource usage)  
-- I/O pin mapping (XDC)  
-
----
 ## Supported Opcodes 
 This core implements the RV32 base integer instruction set. The supported opcodes / instructions are as follows :
 
